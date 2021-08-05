@@ -1,0 +1,49 @@
+.button {
+	background: transparent;
+	border: none;
+    opacity: 0;
+	cursor: pointer;
+	color: white;
+	font-size: 17px;
+	margin-right: 10px;
+    transition: opacity 1.5s ease-in-out;
+
+}
+input {
+	font-size: 20px;
+	background: transparent;
+	border: none;
+	outline: none;
+
+	font-family: 'TechMono';
+	color: white;
+
+	width: 120px;
+	margin-left: 10px;
+    
+
+	&::placeholder {
+		font-family: 'TechMono';
+		color: white;
+	}
+
+    &:not(:placeholder-shown)~.button{
+        opacity: 1;
+    }
+}
+input[type='text']::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+input[type='text']::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	display: none;
+}
