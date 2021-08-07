@@ -1,20 +1,19 @@
 body {
 	background: $Image;
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 }
-html{
-	margin:0;
+html {
+	margin: 0;
 	padding: 0;
 }
 
 .main {
-    display: flex;
+	display: flex;
 	background-color: rgba(black, 40%);
 
 	height: 100vh;
 	width: 100vw;
-
 
 	.boxleft {
 		height: 99vh;
@@ -24,10 +23,10 @@ html{
 		border-radius: 10px;
 	}
 
-    .boxright {
+	.boxright {
 		display: flex;
 		flex-direction: column;
-		align-items:  center;
+		align-items: center;
 		height: calc(100vh - 2px);
 		width: 30vw;
 		background-color: rgba(white, 0%);
@@ -36,31 +35,125 @@ html{
 
 		transition: all 1s ease-in-out;
 
-		&:hover{
+		&:hover {
 			border: 1px solid rgba(white, 80%);
 			background-color: rgba(white, 10%);
 		}
 
-		.searchBox{
+		.searchBox {
 			display: flex;
 			align-items: center;
 			border-bottom: 3px solid rgba(white, 0%);
 
 			margin-top: 30%;
 
-			opacity:0%;
+			opacity: 0%;
 
 			height: 30px;
 			width: 170px;
 
 			transition: border-bottom 1s ease-in-out, opacity 2s ease-in-out;
 
-			&:hover{
+			&:hover {
 				border-bottom: 3px solid rgba(white, 100%);
 			}
-			
-
 		}
-		
+
+		.IconText {
+			display: flex;
+			align-items: center;
+			width: 70%;
+			height: 100px;
+
+			.textdiv {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 100px;
+				width: 200px;
+
+				.text {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 20px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+				.temp {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 15px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+			}
+		}
+
+		.humidity {
+			display: flex;
+			align-items: center;
+			width: 70%;
+			height: 100px;
+			.textdiv2 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 100px;
+				width: 200px;
+				.text {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 20px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+				.temp {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 15px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+			}
+		}
+
+		.airQuality {
+			display: flex;
+			align-items: center;
+			width: 70%;
+			height: 100px;
+			.textdiv3 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 100px;
+				width: 200px;
+				.textAir {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 20px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+				.numAir {
+					font-family: 'TechMono';
+					color: white;
+					font-size: 15px;
+					opacity: 0;
+					transition: opacity 1s ease;
+				}
+			}
+		}
+
+		.giphy{
+			margin-top: 5%;
+			height: 150px;
+			width: 150px;
+			background-color: rgba(grey, 0.7);
+			border-radius: 75px;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+			overflow: hidden;
+		}
 	}
 }
