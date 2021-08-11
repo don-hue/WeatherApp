@@ -1,0 +1,11 @@
+@mixin baseman {
+	opacity: 0;
+	transition: all 1s ease-in-out;
+	color: greenyellow;
+}
+
+@mixin basemana {
+	opacity: 0;
+	transition: all 1s ease-in-out;
+	color: white;
+}
