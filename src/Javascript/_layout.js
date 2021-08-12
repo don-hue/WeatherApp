@@ -476,6 +476,7 @@ async function _getCurrentWeeklyInfo() {
 		const previousImg = document.querySelector(placeholderImg);
 		const previousText = document.querySelector(placeholderText);
 		const previousTemp = document.querySelector(placeholderTemp);
+		const previousHighLight=document.querySelector('.currentDay');
 
 		function setUpIcon() {
 			const divTemp = '.subdiv' + (ObjData.day + 10);
@@ -523,8 +524,6 @@ async function _getCurrentWeeklyInfo() {
 				tempdiv.style.opacity = 1;
 			}, 2000);
 		}
-		// setUpIcon()
-		// setUpText()
 
 		if (previousImg != null) {
 			let removeOpacity = new Promise((resolve) => {
@@ -533,6 +532,7 @@ async function _getCurrentWeeklyInfo() {
 				}, 0);
 				previousText.style.opacity = 0;
 				previousTemp.style.opacity = 0;
+				previousHighLight.style.backgroundColor='rgba(255,255,255,0)'
 				previousImg.classList.add('done');
 
 				if (previousImg.classList.contains('done') == true) {
@@ -544,10 +544,9 @@ async function _getCurrentWeeklyInfo() {
 
 			function removeMyDiv() {
 				return new Promise((resolve) => {
-					previousText.innerHTML=null;
-					previousTemp.innerHTML=null;
+					previousText.innerHTML = '';
+					previousTemp.innerHTML = '';
 					previousImg.remove();
-
 					const previousImgTemp = document.querySelector(placeholderImg);
 
 					if (previousImgTemp == null) {
@@ -559,11 +558,12 @@ async function _getCurrentWeeklyInfo() {
 			async function createNew() {
 				setUpIcon();
 				setUpText();
+				setTimeout(() => {
+					previousHighLight.style.backgroundColor='rgba(255,255,255,0.2)'
+				}, 2000);
 			}
 
-			removeOpacity
-			.then(removeMyDiv);
-			//.then(createNew);
+			removeOpacity.then(removeMyDiv).then(createNew);
 			return ObjData;
 		} else {
 			setUpIcon();
@@ -571,9 +571,31 @@ async function _getCurrentWeeklyInfo() {
 			return ObjData;
 		}
 	};
+	function highlyLightCurrentDay(ObjData) {
+		let arrayDays = [
+			'.Sunday',
+			'.Monday',
+			'.Thuesday',
+			'.Wednesday',
+			'.Thursday',
+			'.Friday',
+			'.Saturday',
+		];
+		
+
+		setTimeout(function(){
+			const currentDay = document.querySelector(arrayDays[ObjData.day]);
+		currentDay.classList.add('currentDay');
+		},2500)
+	}
 	if (inputValue.value !== '') {
-		for (let i = 0; i < 7; i++)
+		for (let i = 0; i < 7; i++) {
 			_weatherDaily(inputValue.value, i).then(_weatherInfo);
+
+			if (i == 0) {
+				_weatherDaily(inputValue.value, i).then(highlyLightCurrentDay);
+			}
+		}
 	}
 }
 

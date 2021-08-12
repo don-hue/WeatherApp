@@ -57,9 +57,9 @@ async function _getAirPollution(City){
 
 function _makeStandardCall(city) {
 	let standardBase =
-		'http://api.openweathermap.org/data/2.5/weather?q=' +
-		city +
-		'&appid={}';
+	'http://api.openweathermap.org/data/2.5/weather?q=' +
+	city +
+	'&appid={}';
 	return standardBase;
 }
 

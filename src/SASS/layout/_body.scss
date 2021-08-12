@@ -20,7 +20,7 @@ html {
 		justify-content: space-evenly;
 		height: 80vh;
 		width: 70vw;
-		margin-top: 8.3%;
+		margin-top: 7.9%;
 		background-color: rgba(white, 0%);
 		border: 1px solid rgba(white, 0%);
 		border-radius: 10px;
@@ -108,7 +108,17 @@ html {
 			.subdiv36 {
 				@include basemana;
 			}
+			
 		}
+		.currentDay{
+			border: 0px solid rgba(white, 80%);
+			border-radius: 10px;
+			background-color: rgba(white, 20%);
+			transition: all 1s ease-in-out;
+
+		}
+
+		
 	}
 
 	.boxright {
